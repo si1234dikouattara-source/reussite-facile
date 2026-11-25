@@ -345,3 +345,164 @@ COURS.push(
     ]
   }
 );
+
+/* ===================== DEUXIÈME LOT DE COURS ===================== */
+COURS.push(
+  {
+    id: "cp-nombres-20", niveau: "primaire", classe: "CP", matiere: "Maths",
+    titre: "Les nombres jusqu'à 20",
+    resume: "Lire, écrire et décomposer les nombres de 0 à 20.",
+    lecon: [
+      { titre: "Les nombres à connaître", html: `<p>11 onze, 12 douze, 13 treize, 14 quatorze, 15 quinze, 16 seize, 17 dix-sept, 18 dix-huit, 19 dix-neuf, 20 vingt.</p>` },
+      { titre: "Dizaines et unités", html: `<p>Une dizaine, c'est 10 unités. On peut décomposer un nombre :</p><div class="exemple">14 = 10 + 4<br>17 = 10 + 7</div>` }
+    ],
+    retenir: ["Une dizaine = 10 unités.", "Les nombres de 11 à 16 ont un nom à apprendre par cœur.", "De 17 à 19 : dix-sept, dix-huit, dix-neuf."],
+    exercices: [
+      { enonce: "Écris 16 en lettres.", correction: "<strong>seize</strong>." },
+      { enonce: "Complète : 13 = 10 + ___", correction: "13 = 10 + <strong>3</strong>." },
+      { enonce: "Combien font 10 + 7 ?", correction: "<strong>17</strong> (dix-sept)." }
+    ],
+    quiz: [
+      { q: "Quel nombre s'écrit « dix-huit » ?", choix: ["8", "18", "80", "19"], bonne: 1, explication: "Dix-huit = 10 + 8 = 18." },
+      { q: "12 = 10 + ?", choix: ["1", "3", "2", "12"], bonne: 2, explication: "12 = 10 + 2." },
+      { q: "Quel nombre s'écrit « quinze » ?", choix: ["5", "15", "50", "14"], bonne: 1, explication: "Quinze = 15." }
+    ]
+  },
+  {
+    id: "cm2-passe-compose", niveau: "primaire", classe: "CM2", matiere: "Français",
+    titre: "Le passé composé",
+    resume: "Former le passé composé avec avoir ou être.",
+    lecon: [
+      { titre: "Comment le former", html: `<p>Passé composé = auxiliaire (<strong>avoir</strong> ou <strong>être</strong>) au présent + <strong>participe passé</strong>.</p>
+        <div class="exemple">J'ai mangé. / Nous avons chanté.<br>Elle est partie. / Ils sont arrivés.</div>` },
+      { titre: "Les règles à retenir", html: `<ul><li>Verbes en -er : participe passé en <strong>-é</strong> (jouer → joué).</li>
+        <li>Avec <strong>être</strong>, le participe passé s'accorde avec le sujet : il est parti, elle est parti<strong>e</strong>, ils sont parti<strong>s</strong>.</li></ul>` }
+    ],
+    retenir: ["Passé composé = avoir / être au présent + participe passé.", "Verbes en -er : participe passé en -é.", "Avec être, on accorde avec le sujet."],
+    exercices: [
+      { enonce: "Hier, nous (jouer) au foot.", correction: "Nous <strong>avons joué</strong> au foot." },
+      { enonce: "Elle (partir) tôt ce matin.", correction: "Elle <strong>est partie</strong> tôt ce matin." },
+      { enonce: "Tu (finir) tes devoirs.", correction: "Tu <strong>as fini</strong> tes devoirs." }
+    ],
+    quiz: [
+      { q: "Quel auxiliaire pour « aller » ?", choix: ["avoir", "être", "faire", "aucun"], bonne: 1, explication: "Je suis allé : on utilise être." },
+      { q: "Il (manger) → ?", choix: ["il a mangé", "il est mangé", "il a manger", "il mange"], bonne: 0, explication: "Auxiliaire avoir + participe passé mangé." },
+      { q: "Ils (arriver) → ?", choix: ["ils ont arrivé", "ils sont arrivés", "ils sont arrivé", "ils ont arrivés"], bonne: 1, explication: "Avec être, on accorde : ils sont arrivés." }
+    ]
+  },
+  {
+    id: "6e-perimetre-aire", niveau: "college", classe: "6e", matiere: "Maths",
+    titre: "Périmètre et aire",
+    resume: "Calculer le périmètre et l'aire du rectangle, du carré et du triangle.",
+    lecon: [
+      { titre: "Les formules", html: `<ul><li>Rectangle : périmètre = 2 × (L + l) ; aire = L × l</li><li>Carré de côté c : périmètre = 4 × c ; aire = c × c</li><li>Triangle : aire = (base × hauteur) ÷ 2</li></ul>` },
+      { titre: "Exemple", html: `<div class="exemple">Rectangle de 8 cm sur 5 cm<br>Périmètre : 2 × (8 + 5) = 26 cm<br>Aire : 8 × 5 = 40 cm²</div>` }
+    ],
+    retenir: ["Le périmètre est une longueur (cm), l'aire une surface (cm²).", "Rectangle : 2 × (L + l) et L × l.", "Triangle : base × hauteur ÷ 2."],
+    exercices: [
+      { enonce: "Un carré a un côté de 6 cm. Calcule son périmètre et son aire.", correction: "Périmètre : 4 × 6 = <strong>24 cm</strong>. Aire : 6 × 6 = <strong>36 cm²</strong>." },
+      { enonce: "Un triangle a pour base 10 cm et pour hauteur 4 cm. Calcule son aire.", correction: "10 × 4 ÷ 2 = <strong>20 cm²</strong>." }
+    ],
+    quiz: [
+      { q: "Aire d'un rectangle de 7 cm sur 3 cm ?", choix: ["10 cm²", "20 cm²", "21 cm²", "14 cm²"], bonne: 2, explication: "7 × 3 = 21 cm²." },
+      { q: "Périmètre d'un carré de côté 5 cm ?", choix: ["10 cm", "20 cm", "25 cm", "15 cm"], bonne: 1, explication: "4 × 5 = 20 cm." },
+      { q: "Aire d'un triangle de base 6 et de hauteur 5 ?", choix: ["30", "15", "11", "60"], bonne: 1, explication: "6 × 5 ÷ 2 = 15." }
+    ]
+  },
+  {
+    id: "5e-digestion", niveau: "college", classe: "5e", matiere: "SVT",
+    titre: "La digestion",
+    resume: "Le trajet des aliments dans le corps et l'absorption des nutriments.",
+    lecon: [
+      { titre: "Le tube digestif", html: `<ol><li><strong>Bouche</strong> : mastication et salive.</li><li><strong>Œsophage</strong> : conduit les aliments vers l'estomac.</li><li><strong>Estomac</strong> : brasse les aliments avec le suc gastrique.</li><li><strong>Intestin grêle</strong> : fin de la digestion et passage des nutriments dans le sang.</li><li><strong>Gros intestin</strong> : récupère l'eau, forme les déchets.</li></ol>` }
+    ],
+    retenir: ["La digestion transforme les aliments en nutriments.", "L'absorption des nutriments se fait dans l'intestin grêle.", "Les nutriments passent dans le sang, qui les distribue au corps."],
+    exercices: [
+      { enonce: "Où commence la digestion ?", correction: "Dans la <strong>bouche</strong>, avec la mastication et la salive." },
+      { enonce: "Où les nutriments passent-ils dans le sang ?", correction: "Dans l'<strong>intestin grêle</strong>." }
+    ],
+    quiz: [
+      { q: "Quel organe brasse les aliments avec le suc gastrique ?", choix: ["L'œsophage", "L'estomac", "Le foie", "Le cœur"], bonne: 1, explication: "L'estomac." },
+      { q: "Où a lieu l'absorption des nutriments ?", choix: ["Bouche", "Estomac", "Intestin grêle", "Œsophage"], bonne: 2, explication: "Dans l'intestin grêle." },
+      { q: "Les nutriments sont transportés par…", choix: ["l'air", "le sang", "la salive", "les os"], bonne: 1, explication: "Par le sang." }
+    ]
+  },
+  {
+    id: "3e-thales", niveau: "college", classe: "3e", matiere: "Maths",
+    titre: "Le théorème de Thalès",
+    resume: "Calculer des longueurs avec des droites parallèles.",
+    lecon: [
+      { titre: "Le théorème", html: `<p>Soit ABC un triangle, M un point de [AB] et N un point de [AC]. Si <strong>(MN) est parallèle à (BC)</strong>, alors :</p>
+        <div class="exemple">AM / AB = AN / AC = MN / BC</div>` },
+      { titre: "Exemple", html: `<p>AM = 2, AB = 6 et AN = 3. Alors 2/6 = 3/AC, donc AC = 3 × 6 ÷ 2 = <strong>9</strong>.</p>` }
+    ],
+    retenir: ["Il faut des droites parallèles : (MN) // (BC).", "AM/AB = AN/AC = MN/BC.", "On calcule avec un produit en croix."],
+    exercices: [
+      { enonce: "AM = 2, AB = 6, AN = 3. Calcule AC.", correction: "2/6 = 3/AC donc AC = 6 × 3 ÷ 2 = <strong>9</strong>." },
+      { enonce: "AM = 2, AB = 6, BC = 12. Calcule MN.", correction: "MN/12 = 2/6 donc MN = 12 × 2 ÷ 6 = <strong>4</strong>." }
+    ],
+    quiz: [
+      { q: "Quelle condition faut-il pour utiliser Thalès ?", choix: ["Un angle droit", "Des droites parallèles", "Un triangle isocèle", "Un cercle"], bonne: 1, explication: "(MN) doit être parallèle à (BC)." },
+      { q: "Quel rapport est égal à AM/AB ?", choix: ["AN/AC", "AN/BC", "AB/AC", "MN/AB"], bonne: 0, explication: "AM/AB = AN/AC." },
+      { q: "AM = 3, AB = 9, AC = 12. AN = ?", choix: ["3", "4", "6", "36"], bonne: 1, explication: "3/9 = AN/12 donc AN = 4." }
+    ]
+  },
+  {
+    id: "4e-anglais-past-simple", niveau: "college", classe: "4e", matiere: "Anglais",
+    titre: "Le prétérit (past simple)",
+    resume: "Raconter des actions terminées dans le passé.",
+    lecon: [
+      { titre: "Verbes réguliers et irréguliers", html: `<ul><li>Réguliers : on ajoute <strong>-ed</strong> (play → played).</li><li>Irréguliers à apprendre : go → went, see → saw, have → had, eat → ate.</li></ul>` },
+      { titre: "Négatif et question", html: `<ul><li>Négatif : <strong>didn't</strong> + verbe à l'infinitif : I didn't go.</li><li>Question : <strong>Did</strong> + sujet + infinitif ? Did you go ?</li></ul>` }
+    ],
+    retenir: ["Réguliers : verbe + -ed.", "Négatif : didn't + infinitif ; question : Did + infinitif.", "go → went, see → saw, have → had, eat → ate."],
+    exercices: [
+      { enonce: "Mets au prétérit : see.", correction: "<strong>saw</strong>." },
+      { enonce: "Forme négative : She played tennis.", correction: "She <strong>didn't play</strong> tennis." },
+      { enonce: "Forme interrogative : You watched TV.", correction: "<strong>Did you watch</strong> TV ?" }
+    ],
+    quiz: [
+      { q: "Le prétérit de « go » est…", choix: ["goed", "went", "gone", "goes"], bonne: 1, explication: "go → went." },
+      { q: "She ___ football yesterday.", choix: ["play", "plays", "played", "playing"], bonne: 2, explication: "Verbe régulier : played." },
+      { q: "Did he ___ to school ?", choix: ["go", "went", "goes", "going"], bonne: 0, explication: "Après did, on utilise l'infinitif : go." }
+    ]
+  },
+  {
+    id: "1re-probabilites-conditionnelles", niveau: "lycee", classe: "1re", matiere: "Maths",
+    titre: "Les probabilités conditionnelles",
+    resume: "Calculer la probabilité de B sachant A.",
+    lecon: [
+      { titre: "Définition", html: `<p>La probabilité de B sachant A (avec P(A) &gt; 0) est :</p><div class="exemple">P<sub>A</sub>(B) = P(A ∩ B) / P(A)</div>` },
+      { titre: "Formule des probabilités composées", html: `<div class="exemple">P(A ∩ B) = P(A) × P<sub>A</sub>(B)</div>` }
+    ],
+    retenir: ["P_A(B) = P(A ∩ B) / P(A).", "P(A ∩ B) = P(A) × P_A(B).", "On utilise souvent un arbre pondéré."],
+    exercices: [
+      { enonce: "P(A) = 0,5 et P(A ∩ B) = 0,2. Calcule P_A(B).", correction: "0,2 / 0,5 = <strong>0,4</strong>." },
+      { enonce: "Une urne contient 3 boules rouges et 2 bleues. On tire 2 boules sans remise. Probabilité d'obtenir deux rouges ?", correction: "3/5 × 2/4 = 6/20 = <strong>3/10</strong>." }
+    ],
+    quiz: [
+      { q: "Quelle est la formule de P_A(B) ?", choix: ["P(A) / P(B)", "P(A ∩ B) / P(A)", "P(A) + P(B)", "P(A ∩ B) × P(A)"], bonne: 1, explication: "P_A(B) = P(A ∩ B) / P(A)." },
+      { q: "P(A) = 0,4 et P_A(B) = 0,5. P(A ∩ B) = ?", choix: ["0,9", "0,2", "0,1", "0,8"], bonne: 1, explication: "0,4 × 0,5 = 0,2." },
+      { q: "P(A) = 0,2 et P(A ∩ B) = 0,1. P_A(B) = ?", choix: ["0,5", "0,02", "2", "0,1"], bonne: 0, explication: "0,1 / 0,2 = 0,5." }
+    ]
+  },
+  {
+    id: "1re-energie-cinetique", niveau: "lycee", classe: "1re", matiere: "Physique-Chimie",
+    titre: "L'énergie cinétique",
+    resume: "Calculer l'énergie d'un objet en mouvement.",
+    lecon: [
+      { titre: "La formule", html: `<p>L'énergie cinétique d'un objet de masse m et de vitesse v est :</p><div class="exemple">Ec = ½ × m × v²</div><p>Ec en joules (J), m en kilogrammes (kg), v en mètres par seconde (m/s).</p>` },
+      { titre: "À savoir", html: `<p>Si la vitesse est multipliée par 2, l'énergie cinétique est multipliée par <strong>4</strong> (car v est au carré).</p>` }
+    ],
+    retenir: ["Ec = ½ m v².", "Unités : J, kg, m/s.", "Vitesse × 2 ⇒ énergie × 4."],
+    exercices: [
+      { enonce: "m = 2 kg et v = 3 m/s. Calcule Ec.", correction: "½ × 2 × 3² = 1 × 9 = <strong>9 J</strong>." },
+      { enonce: "Une voiture de 1000 kg roule à 10 m/s. Calcule Ec.", correction: "½ × 1000 × 100 = <strong>50 000 J</strong>." }
+    ],
+    quiz: [
+      { q: "Quelle est l'unité de l'énergie cinétique ?", choix: ["Watt", "Joule", "Newton", "Volt"], bonne: 1, explication: "Le joule (J)." },
+      { q: "m = 4 kg et v = 5 m/s. Ec = ?", choix: ["20 J", "50 J", "100 J", "10 J"], bonne: 1, explication: "½ × 4 × 25 = 50 J." },
+      { q: "Si la vitesse double, Ec est multipliée par…", choix: ["2", "4", "8", "1"], bonne: 1, explication: "v est au carré, donc × 4." }
+    ]
+  }
+);

@@ -1,0 +1,31 @@
+COMMENT AJOUTER UN COURS
+========================
+
+1. Ouvre le fichier data.js sur GitHub (icône crayon pour modifier).
+2. Copie un bloc de cours complet : de { jusqu'à }, (avec la virgule).
+3. Colle-le juste avant le dernier ];  puis change :
+   - id       : un nom unique, sans espaces ni accents (ex: "5e-aires")
+   - niveau   : "primaire", "college" ou "lycee"
+   - classe   : CP, CE1, CE2, CM1, CM2, 6e, 5e, 4e, 3e, 2de, 1re, Terminale
+   - matiere  : Maths, Français, Histoire, SVT, etc.
+   - titre, resume, lecon, retenir, exercices, quiz
+4. Dans quiz, "bonne" = le numéro de la bonne réponse, en comptant à partir de 0
+   (0 = première réponse, 1 = deuxième, 2 = troisième...).
+5. Clique sur "Commit changes". Le cours apparaît tout seul dans cours.html.
+
+ATTENTION
+- Garde bien les virgules entre les blocs et entre les lignes.
+- Dans un texte entre guillemets "...", n'écris pas de " à l'intérieur
+  (utilise « » ou ').
+
+METTRE LES FICHIERS SUR GITHUB
+- Dépôt > Add file > Upload files > ajoute :
+  cours.html, lecon.html, cours.css, data.js
+- Clique sur "Commit changes".
+
+AJOUTER UN LIEN DANS TON ACCUEIL
+Dans index.html, ajoute : <a href="cours.html">Cours</a>
+
+METTRE LE SITE EN LIGNE
+Dépôt > Settings > Pages > Source : "Deploy from a branch"
+> Branch : principal (main) / dossier (root) > Save.

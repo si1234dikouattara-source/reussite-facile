@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leçon – réussite-facile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cours.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="index.html">Accueil</a>
+    <a href="cours.html" aria-current="page">Cours</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="feuille" id="page"></main>
+
+  <script src="data.js"></script>
+  <script src="data-plus.js"></script>
+  <script>
+    const page = document.getElementById("page");
+    const id = new URLSearchParams(location.search).get("id");
+    const c = COURS.find(x => x.id === id);
+
+    if (!c) {
+      page.innerHTML = '<h1>Cours introuvable</h1><p>Ce cours n\'existe pas ou a changé d\'adresse. <a href="cours.html">Voir tous les cours</a></p>';
+    } else {
+      document.title = c.titre + " – réussite-facile";
+
+      const lecon = c.lecon.map(s => `<section><h2>${s.titre}</h2>${s.html}</section>`).join("");
+
+      const retenir = `<aside class="retenir"><h2>À retenir</h2><ul>${c.retenir.map(r => `<li>${r}</li>`).join("")}</ul></aside>`;
+
+      const exos = `<section><h2>Exercices</h2><ol class="exos">${c.exercices.map(e => `
+        <li>${e.enonce}
+          <details><summary>Voir la correction</summary><div class="correction">${e.correction}</div></details>
+        </li>`).join("")}</ol></section>`;
+
+      const quiz = `<section><h2>Quiz</h2><div id="quiz">${c.quiz.map((q, i) => `
+        <fieldset class="question" data-i="${i}">
+          <legend>${i + 1}. ${q.q}</legend>
+          <div class="choix">${q.choix.map((ch, j) => `<button type="button" data-j="${j}">${ch}</button>`).join("")}</div>
+          <p class="explication" hidden></p>
+        </fieldset>`).join("")}</div>
+        <p class="score" id="score" aria-live="polite"></p></section>`;
+
+      page.innerHTML = `
+        <p class="fil"><a href="cours.html">← Tous les cours</a></p>
+        <p><span class="etiquette">${c.classe}</span><span class="etiquette">${c.matiere}</span></p>
+        <h1>${c.titre}</h1>
+        <p class="intro">${c.resume}</p>
+        ${lecon}${retenir}${exos}${quiz}
+        <p><a href="cours.html">← Retour aux cours</a></p>`;
+
+      /* ---- logique du quiz ---- */
+      let reponses = 0, bonnes = 0;
+      document.getElementById("quiz").addEventListener("click", e => {
+        const btn = e.target.closest("button[data-j]");
+        if (!btn) return;
+        const champ = btn.closest(".question");
+        const q = c.quiz[+champ.dataset.i];
+        const choisi = +btn.dataset.j;
+        const boutons = champ.querySelectorAll("button");
+
+        boutons.forEach((b, j) => {
+          b.disabled = true;
+          if (j === q.bonne) b.classList.add("juste");
+        });
+        if (choisi !== q.bonne) btn.classList.add("faux");
+
+        const expl = champ.querySelector(".explication");
+        expl.hidden = false;
+        expl.textContent = (choisi === q.bonne ? "Bravo ! " : "Pas tout à fait. ") + q.explication;
+
+        reponses++;
+        if (choisi === q.bonne) bonnes++;
+        if (reponses === c.quiz.length) {
+          document.getElementById("score").textContent = `Ton score : ${bonnes} / ${c.quiz.length}`;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

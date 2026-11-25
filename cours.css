@@ -1,0 +1,131 @@
+:root {
+  --papier: #fbfaf4;
+  --encre: #1b2a6b;
+  --texte: #1f2333;
+  --ligne: #d3dcf0;
+  --marge: #d9534a;
+  --surligneur: #fff1a8;
+  --ok: #1f7a4d;
+  --ko: #b3261e;
+  box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  margin: 0;
+  font-family: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--texte);
+  background-color: var(--papier);
+  /* papier quadrillé type cahier */
+  background-image:
+    linear-gradient(var(--ligne) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ligne) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+h1, h2, h3 {
+  font-family: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  color: var(--encre);
+  line-height: 1.2;
+}
+h1 { font-size: 2rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.35rem; margin: 2rem 0 .6rem; }
+
+a { color: var(--encre); }
+:focus-visible { outline: 3px solid var(--encre); outline-offset: 2px; }
+
+/* ---------- navigation ---------- */
+.nav {
+  display: flex; flex-wrap: wrap; gap: .25rem 1.1rem;
+  padding: .9rem 1.2rem;
+  background: var(--encre);
+}
+.nav a { color: #fff; text-decoration: none; font-weight: 700; padding: .2rem 0; }
+.nav a[aria-current="page"] { border-bottom: 3px solid var(--surligneur); }
+
+/* ---------- page = feuille avec marge rouge ---------- */
+.feuille {
+  max-width: 46rem;
+  margin: 1.2rem auto 3rem;
+  padding: 1.5rem 1.2rem 2rem 2.6rem;
+  background: var(--papier);
+  border-left: 2px solid var(--marge);
+  box-shadow: 0 0 0 1px var(--ligne);
+}
+.intro { margin: 0 0 1.4rem; max-width: 36rem; }
+
+/* ---------- filtres ---------- */
+.filtres { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 .8rem; }
+.filtres button {
+  font: inherit; font-weight: 700;
+  padding: .5rem 1rem; min-height: 44px;
+  border: 2px solid var(--encre); border-radius: 999px;
+  background: #fff; color: var(--encre); cursor: pointer;
+}
+.filtres button[aria-pressed="true"] { background: var(--encre); color: #fff; }
+.filtres.matieres button { border-width: 1px; font-weight: 400; padding: .3rem .8rem; min-height: 40px; }
+.filtres.matieres button[aria-pressed="true"] { background: var(--surligneur); color: var(--texte); border-color: var(--texte); font-weight: 700; }
+
+/* ---------- liste des cours ---------- */
+.liste { list-style: none; margin: 1.2rem 0 0; padding: 0; border-top: 1px solid var(--encre); }
+.liste li { border-bottom: 1px solid var(--encre); }
+.liste a {
+  display: block; padding: .9rem .2rem; text-decoration: none; color: var(--texte);
+}
+.liste a:hover .titre { background: var(--surligneur); }
+.titre { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--encre); }
+.meta { display: block; font-size: .92rem; color: #4a5070; }
+.resume { display: block; margin-top: .15rem; }
+.vide { padding: 1rem 0; }
+
+/* ---------- leçon ---------- */
+.fil { font-size: .95rem; margin: 0 0 .6rem; }
+.etiquette {
+  display: inline-block; padding: .1rem .6rem; margin-right: .3rem;
+  border: 1.5px solid var(--encre); border-radius: 6px; font-size: .9rem; font-weight: 700; color: var(--encre);
+}
+.retenir {
+  margin: 1.6rem 0; padding: 1rem 1.1rem;
+  background: var(--surligneur); border-left: 6px solid var(--encre);
+}
+.retenir h2 { margin-top: 0; }
+.retenir ul { margin: .4rem 0 0; padding-left: 1.2rem; }
+
+.exemple { background: #fff; border: 1px dashed var(--encre); padding: .6rem .9rem; margin: .8rem 0; }
+
+.exos { padding-left: 1.3rem; }
+.exos > li { margin-bottom: 1.2rem; }
+details { margin-top: .5rem; }
+summary {
+  cursor: pointer; font-weight: 700; color: var(--encre);
+  min-height: 44px; display: flex; align-items: center;
+}
+details[open] .correction { animation: ouvre .25s ease-out; }
+.correction { background: #fff; border-left: 4px solid var(--ok); padding: .5rem .8rem; }
+@keyframes ouvre { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+/* ---------- quiz ---------- */
+.question { border: 0; padding: 0; margin: 0 0 1.4rem; }
+.question legend { font-weight: 700; padding: 0; margin-bottom: .5rem; }
+.choix { display: grid; gap: .5rem; }
+.choix button {
+  font: inherit; text-align: left; min-height: 48px;
+  padding: .55rem .9rem; background: #fff; color: var(--texte);
+  border: 2px solid var(--ligne); border-radius: 8px; cursor: pointer;
+}
+.choix button:hover:not(:disabled) { border-color: var(--encre); }
+.choix button.juste { border-color: var(--ok); background: #e6f4ec; }
+.choix button.faux { border-color: var(--ko); background: #fbe9e7; }
+.choix button:disabled { cursor: default; color: var(--texte); }
+.explication { margin: .5rem 0 0; font-size: .97rem; }
+.score { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--encre); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+@media (min-width: 640px) {
+  .feuille { padding: 2rem 2.4rem 2.4rem 3.4rem; }
+  h1 { font-size: 2.4rem; }
+}

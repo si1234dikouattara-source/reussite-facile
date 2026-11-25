@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cours – réussite-facile</title>
+  <meta name="description" content="Cours gratuits du primaire à la Terminale, avec exercices corrigés et quiz.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cours.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="index.html">Accueil</a>
+    <a href="cours.html" aria-current="page">Cours</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="feuille">
+    <h1>Les cours</h1>
+    <p class="intro">Du primaire à la Terminale : choisis ton niveau, ouvre une leçon, puis entraîne-toi avec les exercices corrigés et le quiz.</p>
+
+    <div class="filtres" id="niveaux" role="group" aria-label="Niveau"></div>
+    <div class="filtres matieres" id="matieres" role="group" aria-label="Matière"></div>
+
+    <ul class="liste" id="liste"></ul>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="data-plus.js"></script>
+  <script>
+    let niveau = "primaire";
+    let matiere = "Toutes";
+
+    const elNiveaux = document.getElementById("niveaux");
+    const elMatieres = document.getElementById("matieres");
+    const elListe = document.getElementById("liste");
+
+    function bouton(texte, actif, onClick) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = texte;
+      b.setAttribute("aria-pressed", actif);
+      b.addEventListener("click", onClick);
+      return b;
+    }
+
+    function afficher() {
+      elNiveaux.replaceChildren(...Object.entries(NIVEAUX).map(([cle, nom]) =>
+        bouton(nom, cle === niveau, () => { niveau = cle; matiere = "Toutes"; afficher(); })
+      ));
+
+      const duNiveau = COURS.filter(c => c.niveau === niveau);
+      const matieres = ["Toutes", ...new Set(duNiveau.map(c => c.matiere))];
+      elMatieres.replaceChildren(...matieres.map(m =>
+        bouton(m, m === matiere, () => { matiere = m; afficher(); })
+      ));
+
+      const visibles = duNiveau.filter(c => matiere === "Toutes" || c.matiere === matiere);
+      if (!visibles.length) {
+        elListe.innerHTML = '<li class="vide">Pas encore de cours ici. Reviens bientôt !</li>';
+        return;
+      }
+      elListe.innerHTML = visibles.map(c => `
+        <li>
+          <a href="lecon.html?id=${encodeURIComponent(c.id)}">
+            <span class="meta">${c.classe} · ${c.matiere}</span>
+            <span class="titre">${c.titre}</span>
+            <span class="resume">${c.resume}</span>
+          </a>
+        </li>`).join("");
+    }
+    afficher();
+  </script>
+</body>
+</html>

@@ -1,65 +1,27 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Révise facilement avec des cours, exercices et quiz gratuits en français.">
-  <meta name="theme-color" content="#123b68">
-  <title>Réussite Facile — Cours et exercices gratuits</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Après approbation AdSense, colle ici le code officiel fourni dans ton compte. -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Réussite Facile : cours, exercices corrigés et quiz pour apprendre au primaire, au collège et au lycée en Côte d’Ivoire.">
+<title>Réussite Facile — Apprendre, s'entraîner, progresser</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html"><span class="brand-mark">RF</span> Réussite Facile</a>
-  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  <nav class="nav">
-    <a href="#matieres">Matières</a><a href="#quiz">Quiz</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a>
-  </nav>
-</header>
+<header class="top"><a class="brand" href="index.html"><span>RF</span> Réussite Facile</a><button id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+<nav id="nav"><a href="#niveaux">Niveaux</a><a href="#cours">Cours</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="confidentialite.html">Confidentialité</a></nav></header>
 <main>
-  <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow">APPRENDRE • S'ENTRAÎNER • PROGRESSER</p>
-      <h1>Révise à ton rythme.<br><span>Réussis avec confiance.</span></h1>
-      <p>Des explications simples, des exercices pratiques et des quiz gratuits pour apprendre chaque jour.</p>
-      <a class="button" href="#matieres">Découvrir les matières</a>
-    </div>
-    <div class="hero-card" aria-label="Carte de révision">
-      <div class="book-icon">✎</div><p class="card-kicker">TON OBJECTIF DU JOUR</p>
-      <h2>15 minutes pour progresser</h2>
-      <div class="progress"><span></span></div><small>Un petit effort chaque jour fait la différence.</small>
-    </div>
-  </section>
-
-  <section class="section" id="matieres">
-    <div class="section-heading"><div><p class="eyebrow">APPRENDRE SIMPLEMENT</p><h2>Choisis ta matière</h2></div><p>Commence par un thème, puis entraîne-toi avec le quiz.</p></div>
-    <div class="subject-grid">
-      <article class="subject"><div class="subject-icon blue">＋</div><h3>Mathématiques</h3><p>Calcul, fractions, pourcentages et problèmes.</p><a href="#quiz" data-subject="math">Voir les exercices →</a></article>
-      <article class="subject"><div class="subject-icon green">A</div><h3>Français</h3><p>Grammaire, orthographe, conjugaison et vocabulaire.</p><a href="#quiz" data-subject="fr">Voir les exercices →</a></article>
-      <article class="subject"><div class="subject-icon orange">🌍</div><h3>Culture générale</h3><p>Sciences, géographie et connaissances du monde.</p><a href="#quiz" data-subject="culture">Voir les exercices →</a></article>
-    </div>
-  </section>
-
-  <section class="quiz-section" id="quiz">
-    <div class="quiz-intro"><p class="eyebrow">À TOI DE JOUER</p><h2>Teste tes connaissances</h2><p>Réponds à ces trois questions pour commencer.</p></div>
-    <div class="quiz-card">
-      <div class="quiz-top"><span id="question-count">Question 1 / 3</span><span class="tag">Quiz gratuit</span></div>
-      <h3 id="question">Combien font 8 × 7 ?</h3>
-      <div id="answers" class="answers">
-        <button class="answer">54</button><button class="answer">56</button><button class="answer">64</button>
-      </div>
-      <p id="feedback" class="feedback" aria-live="polite"></p>
-      <button id="next" class="button" disabled>Question suivante</button>
-    </div>
-  </section>
-
-  <section class="section tips">
-    <p class="eyebrow">UNE BONNE HABITUDE</p><h2>Comment mieux apprendre ?</h2>
-    <div class="tip-grid"><div><b>01</b><h3>Travaille un peu chaque jour</h3><p>Des séances courtes et régulières aident à retenir les notions.</p></div><div><b>02</b><h3>Pratique activement</h3><p>Fais des exercices et explique les réponses avec tes propres mots.</p></div><div><b>03</b><h3>Revois tes erreurs</h3><p>Comprendre une erreur est une excellente façon de progresser.</p></div></div>
-  </section>
+<section class="hero"><p class="eyebrow">APPRENDRE • S'ENTRAÎNER • PROGRESSER</p><h1>Révise à ton rythme.<br><em>Réussis avec confiance.</em></h1><p>Des explications simples, des exercices pratiques et des quiz gratuits pour apprendre chaque jour.</p><a class="cta" href="#niveaux">Découvrir les matières</a></section>
+<section class="section" id="niveaux"><h2>Choisis ton niveau</h2><div class="cards">
+<article class="card"><h3>Primaire</h3><p>CP1 à CM2</p><a href="#cours" data-level="primaire">Voir les cours</a></article>
+<article class="card"><h3>Collège</h3><p>6e à 3e</p><a href="#cours" data-level="college">Voir les cours</a></article>
+<article class="card"><h3>Lycée</h3><p>2nde à Terminale</p><a href="#cours" data-level="lycee">Voir les cours</a></article>
+</div></section>
+<section class="section" id="cours"><h2>Cours et entraînement</h2><p class="muted">Sélectionne un niveau pour afficher une première leçon. Les contenus seront enrichis progressivement selon les programmes officiels ivoiriens.</p>
+<div class="filters"><label for="level">Niveau</label><select id="level"><option value="primaire">Primaire — CM2</option><option value="college">Collège — 6e</option><option value="lycee">Lycée — 2nde</option></select><label for="subject">Matière</label><select id="subject"><option value="maths">Mathématiques</option><option value="francais">Français</option></select></div>
+<div id="lesson" class="lesson" aria-live="polite"></div>
+</section>
+<section class="section note"><h2>Notre engagement</h2><p>Les leçons proposées ici sont des ressources d'entraînement. Vérifie toujours les notions et progressions avec les documents officiels de ton établissement et de ton enseignant.</p></section>
 </main>
-<footer><a class="brand footer-brand" href="index.html">Réussite Facile</a><div><a href="a-propos.html">À propos</a><a href="confidentialite.html">Confidentialité</a><a href="contact.html">Contact</a></div><small>© <span id="year"></span> Réussite Facile. Tous droits réservés.</small></footer>
+<footer><p>© <span id="year"></span> Réussite Facile — Apprendre chaque jour.</p><p><a href="a-propos.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="confidentialite.html">Confidentialité</a></p></footer>
 <script src="script.js"></script>
-</body>
-</html>
+</body></html>

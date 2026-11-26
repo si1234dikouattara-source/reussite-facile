@@ -1,7 +1,3 @@
-/* Catalogue du collège et du primaire. Initialisation explicite des données utilisées par cours.html et lecon.html. */
-const NIVEAUX = { primaire: "Primaire", college: "Collège (6ème à 3ème)", lycee: "Lycée" };
-const COURS = [];
-
 /* Cours supplémentaires. Ils s'ajoutent automatiquement à la liste de data.js */
 COURS.push(
   /* ===================== PRIMAIRE ===================== */
@@ -507,95 +503,6 @@ COURS.push(
       { q: "Quelle est l'unité de l'énergie cinétique ?", choix: ["Watt", "Joule", "Newton", "Volt"], bonne: 1, explication: "Le joule (J)." },
       { q: "m = 4 kg et v = 5 m/s. Ec = ?", choix: ["20 J", "50 J", "100 J", "10 J"], bonne: 1, explication: "½ × 4 × 25 = 50 J." },
       { q: "Si la vitesse double, Ec est multipliée par…", choix: ["2", "4", "8", "1"], bonne: 1, explication: "v est au carré, donc × 4." }
-    ]
-  }
-);
-
-
-/* ===================== MATHEMATIQUES - PROGRAMME IVOIRIEN ===================== */
-COURS.push(
-  {
-    id: "6e-nombres-entiers-naturels-officiel", niveau: "college", classe: "6e", matiere: "Maths",
-    titre: "Les nombres entiers naturels et la divisibilité",
-    resume: "Lire et utiliser les entiers naturels, reconnaître multiples, diviseurs et critères de divisibilité.",
-    lecon: [
-      { titre: "1. Les entiers naturels", html: `<p>Les <strong>nombres entiers naturels</strong> sont les nombres utilisés pour compter : 0, 1, 2, 3, 4, … On note leur ensemble <strong>ℕ</strong>.</p><p>Un entier naturel peut être pair ou impair. Un nombre pair est divisible par 2 ; un nombre impair ne l'est pas.</p><div class="exemple">Exemples : 0, 8, 125 et 2 040 appartiennent à ℕ. Le nombre −3 n'appartient pas à ℕ.</div>` },
-      { titre: "2. Multiples et diviseurs", html: `<p>Un nombre <strong>a</strong> est un multiple de <strong>b</strong> si l'on peut écrire a = b × k, où k est un entier naturel. Dans ce cas, b est un diviseur de a.</p><div class="exemple">24 = 6 × 4 : 24 est un multiple de 6 et de 4 ; 6 et 4 sont des diviseurs de 24.</div><p>Pour trouver les diviseurs d'un nombre, on recherche les divisions qui donnent un quotient entier et un reste nul.</p>` },
-      { titre: "3. Critères de divisibilité", html: `<ul><li>Par 2 : le chiffre des unités est 0, 2, 4, 6 ou 8.</li><li>Par 3 : la somme des chiffres est un multiple de 3.</li><li>Par 5 : le chiffre des unités est 0 ou 5.</li><li>Par 9 : la somme des chiffres est un multiple de 9.</li><li>Par 10 : le chiffre des unités est 0.</li></ul><div class="exemple">3 456 est divisible par 3 car 3 + 4 + 5 + 6 = 18, et 18 est divisible par 3. Il est aussi divisible par 2 car il se termine par 6.</div>` }
-    ],
-    retenir: ["ℕ désigne l'ensemble des entiers naturels.", "a est un multiple de b si a = b × k avec k entier naturel.", "Un diviseur donne une division avec reste nul.", "Pour tester la divisibilité par 3 ou 9, on additionne les chiffres."],
-    exercices: [
-      { enonce: "Parmi 0 ; 7 ; −2 ; 15 ; 3,5, quels nombres appartiennent à ℕ ?", correction: "Les entiers naturels sont <strong>0, 7 et 15</strong>. −2 est négatif et 3,5 n'est pas entier." },
-      { enonce: "Écris tous les diviseurs positifs de 18.", correction: "Les paires de facteurs sont 1 × 18, 2 × 9 et 3 × 6. Les diviseurs sont <strong>1, 2, 3, 6, 9 et 18</strong>." },
-      { enonce: "Le nombre 4 725 est-il divisible par 3, par 5 et par 9 ? Justifie.", correction: "La somme des chiffres vaut 4 + 7 + 2 + 5 = 18 : il est divisible par <strong>3 et 9</strong>. Il se termine par 5 : il est divisible par <strong>5</strong>." }
-    ],
-    quiz: [
-      { q: "Quel nombre n'appartient pas à ℕ ?", choix: ["0", "12", "−4", "105"], bonne: 2, explication: "−4 est négatif ; les entiers naturels ne sont pas négatifs." },
-      { q: "Lequel est un diviseur de 24 ?", choix: ["5", "7", "8", "10"], bonne: 2, explication: "24 ÷ 8 = 3, sans reste : 8 est un diviseur de 24." },
-      { q: "Un nombre divisible par 9 a une somme de chiffres…", choix: ["toujours paire", "multiple de 9", "qui se termine par 9", "égale à 9 seulement"], bonne: 1, explication: "Le critère de divisibilité par 9 repose sur la somme des chiffres, qui doit être un multiple de 9." }
-    ]
-  },
-  {
-    id: "5e-nombres-premiers-officiel", niveau: "college", classe: "5e", matiere: "Maths",
-    titre: "Les nombres premiers et la décomposition en facteurs premiers",
-    resume: "Reconnaître un nombre premier et décomposer un entier en produit de facteurs premiers.",
-    lecon: [
-      { titre: "1. Définition", html: `<p>Un <strong>nombre premier</strong> est un entier naturel supérieur à 1 qui possède exactement deux diviseurs positifs : 1 et lui-même.</p><div class="exemple">2, 3, 5, 7, 11 et 13 sont premiers. 1 n'est pas premier car il ne possède qu'un seul diviseur positif.</div><p>Le nombre 2 est le seul nombre premier pair.</p>` },
-      { titre: "2. Vérifier qu'un nombre est premier", html: `<p>Pour vérifier qu'un entier n est premier, on cherche s'il possède un diviseur autre que 1 et lui-même. Il suffit de tester les diviseurs premiers inférieurs ou égaux à √n.</p><div class="exemple">29 n'est divisible ni par 2, ni par 3, ni par 5. Comme √29 est inférieur à 6, ces tests suffisent : 29 est premier.</div>` },
-      { titre: "3. Décomposer en facteurs premiers", html: `<p>Décomposer un entier en facteurs premiers consiste à l'écrire comme un produit de nombres premiers.</p><div class="exemple">60 = 2 × 30 = 2 × 2 × 15 = <strong>2² × 3 × 5</strong>.</div><p>Cette décomposition est utile pour simplifier des fractions et rechercher des diviseurs communs.</p>` }
-    ],
-    retenir: ["Un nombre premier possède exactement deux diviseurs positifs.", "1 n'est pas premier ; 2 est le seul nombre premier pair.", "La décomposition en facteurs premiers est un produit de nombres premiers."],
-    exercices: [
-      { enonce: "Parmi 1, 2, 9, 17 et 21, quels nombres sont premiers ?", correction: "<strong>2 et 17</strong> sont premiers. 1 n'a qu'un diviseur ; 9 = 3 × 3 et 21 = 3 × 7." },
-      { enonce: "Décompose 84 en produit de facteurs premiers.", correction: "84 = 2 × 42 = 2 × 2 × 21 = <strong>2² × 3 × 7</strong>." },
-      { enonce: "Pourquoi 35 n'est-il pas premier ?", correction: "Parce que 35 = 5 × 7 : il possède des diviseurs autres que 1 et 35." }
-    ],
-    quiz: [
-      { q: "Combien de diviseurs positifs possède un nombre premier ?", choix: ["1", "2", "3", "4"], bonne: 1, explication: "Un nombre premier possède exactement deux diviseurs positifs : 1 et lui-même." },
-      { q: "Lequel est un nombre premier ?", choix: ["1", "15", "19", "25"], bonne: 2, explication: "19 n'est divisible que par 1 et 19." },
-      { q: "La décomposition de 36 en facteurs premiers est…", choix: ["2 × 18", "2² × 3²", "4 × 9", "6 × 6"], bonne: 1, explication: "36 = 4 × 9 = 2² × 3² ; tous les facteurs sont premiers." }
-    ]
-  },
-  {
-    id: "4e-nombres-rationnels-officiel", niveau: "college", classe: "4e", matiere: "Maths",
-    titre: "Les nombres rationnels et les fractions",
-    resume: "Reconnaître un nombre rationnel, simplifier et comparer des fractions, effectuer des opérations.",
-    lecon: [
-      { titre: "1. Définition d'un nombre rationnel", html: `<p>Un nombre rationnel est un nombre qui peut s'écrire sous la forme <strong>a/b</strong>, avec a et b entiers et b différent de 0. L'ensemble des rationnels est noté ℚ.</p><div class="exemple">3/4, −5/2 et 7 = 7/1 sont des nombres rationnels.</div><p>Plusieurs fractions peuvent représenter le même nombre : 1/2 = 2/4 = 3/6.</p>` },
-      { titre: "2. Simplifier une fraction", html: `<p>Pour simplifier une fraction, on divise son numérateur et son dénominateur par un même diviseur non nul.</p><div class="exemple">18/24 = (18 ÷ 6)/(24 ÷ 6) = <strong>3/4</strong>.</div><p>Une fraction est irréductible lorsqu'on ne peut plus simplifier son numérateur et son dénominateur par un diviseur commun supérieur à 1.</p>` },
-      { titre: "3. Comparer et calculer", html: `<p>Pour comparer deux fractions positives, on peut les réduire au même dénominateur ou comparer les produits en croix. Pour additionner ou soustraire, il faut d'abord obtenir un dénominateur commun.</p><div class="exemple">2/3 + 1/4 = 8/12 + 3/12 = <strong>11/12</strong>.<br>3/5 − 1/10 = 6/10 − 1/10 = <strong>1/2</strong>.</div><p>Pour multiplier deux fractions, on multiplie les numérateurs entre eux et les dénominateurs entre eux.</p>` }
-    ],
-    retenir: ["Un rationnel s'écrit a/b avec b ≠ 0.", "Pour simplifier, on divise en haut et en bas par le même nombre non nul.", "Pour additionner ou soustraire, on utilise un dénominateur commun.", "Pour multiplier deux fractions, on multiplie les numérateurs et les dénominateurs."],
-    exercices: [
-      { enonce: "Simplifie la fraction 42/56.", correction: "Le PGCD de 42 et 56 est 14. Donc 42/56 = (42 ÷ 14)/(56 ÷ 14) = <strong>3/4</strong>." },
-      { enonce: "Calcule 5/6 + 1/4.", correction: "Le dénominateur commun est 12 : 5/6 = 10/12 et 1/4 = 3/12. La somme vaut <strong>13/12</strong>." },
-      { enonce: "Compare 7/8 et 5/6.", correction: "7 × 6 = 42 et 5 × 8 = 40. Comme 42 &gt; 40, <strong>7/8 &gt; 5/6</strong>." }
-    ],
-    quiz: [
-      { q: "Quel nombre n'est pas rationnel sous la forme a/b avec a et b entiers ?", choix: ["−2", "0,5", "3/7", "√2"], bonne: 3, explication: "√2 est irrationnel : il ne peut pas s'écrire comme quotient de deux entiers." },
-      { q: "La fraction 18/24 simplifiée vaut…", choix: ["2/3", "3/4", "4/5", "6/8"], bonne: 1, explication: "On divise le numérateur et le dénominateur par 6 : 18/24 = 3/4." },
-      { q: "2/5 + 1/5 = ?", choix: ["3/10", "2/10", "3/5", "1/5"], bonne: 2, explication: "Les dénominateurs sont identiques : on additionne les numérateurs et on conserve 5." }
-    ]
-  },
-  {
-    id: "3e-racines-carrees-officiel", niveau: "college", classe: "3e", matiere: "Maths",
-    titre: "Les racines carrées",
-    resume: "Comprendre la racine carrée, reconnaître les carrés parfaits et simplifier des expressions simples.",
-    lecon: [
-      { titre: "1. Définition", html: `<p>Pour un nombre réel positif a, sa <strong>racine carrée</strong> √a est l'unique nombre positif dont le carré est égal à a.</p><div class="exemple">√25 = 5 car 5² = 25. √0 = 0 et √1 = 1.</div><p>Dans les nombres réels, la racine carrée d'un nombre négatif n'est pas définie.</p>` },
-      { titre: "2. Carrés parfaits", html: `<p>Les carrés parfaits sont les carrés d'entiers : 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, etc. Les connaître aide à encadrer une racine carrée.</p><div class="exemple">Comme 25 &lt; 30 &lt; 36, on obtient 5 &lt; √30 &lt; 6.</div>` },
-      { titre: "3. Propriétés utiles", html: `<p>Pour a ≥ 0 et b ≥ 0 : √(a × b) = √a × √b. Pour b &gt; 0 : √(a/b) = √a/√b.</p><div class="exemple">√(9 × 4) = √9 × √4 = 3 × 2 = 6.<br>√50 = √(25 × 2) = <strong>5√2</strong>.</div><p>Attention : en général, √(a + b) n'est pas égal à √a + √b.</p>` }
-    ],
-    retenir: ["√a est le nombre positif dont le carré vaut a.", "Dans ℝ, on ne prend la racine carrée que d'un nombre positif ou nul.", "√(ab) = √a × √b pour a et b positifs ou nuls.", "√(a + b) n'est généralement pas égal à √a + √b."],
-    exercices: [
-      { enonce: "Calcule √49 et √121.", correction: "√49 = <strong>7</strong> car 7² = 49 ; √121 = <strong>11</strong> car 11² = 121." },
-      { enonce: "Encadre √20 entre deux entiers consécutifs.", correction: "16 &lt; 20 &lt; 25, donc <strong>4 &lt; √20 &lt; 5</strong>." },
-      { enonce: "Simplifie √72.", correction: "72 = 36 × 2, donc √72 = √36 × √2 = <strong>6√2</strong>." }
-    ],
-    quiz: [
-      { q: "√81 vaut…", choix: ["8", "9", "10", "−9"], bonne: 1, explication: "9² = 81 et la racine carrée désigne le nombre positif." },
-      { q: "Entre quels entiers se trouve √15 ?", choix: ["2 et 3", "3 et 4", "4 et 5", "5 et 6"], bonne: 1, explication: "9 &lt; 15 &lt; 16, donc 3 &lt; √15 &lt; 4." },
-      { q: "√(25 × 4) vaut…", choix: ["10", "20", "100", "29"], bonne: 0, explication: "√25 × √4 = 5 × 2 = 10." }
     ]
   }
 );

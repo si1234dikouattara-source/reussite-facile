@@ -1,0 +1,36 @@
+# Réussite Facile — version enrichie
+
+Site statique compatible avec GitHub Pages, sans installation ni serveur.
+
+## Contenu
+- Classes : 6ème, 5ème, 4ème et 3ème
+- Matières : Mathématiques, Français, Anglais, Sciences, Histoire-Géographie et Éducation civique
+- Leçons avec explications et exemples
+- Recherche et filtre par matière
+- Quiz interactif avec correction immédiate
+- Pages À propos, Contact et Confidentialité
+- Mise en page adaptée aux téléphones
+
+## Installation dans ton dépôt existant
+1. Télécharge et décompresse le ZIP.
+2. Ouvre ton dépôt GitHub `reussite-facile`.
+3. Fais une copie de sauvegarde de tes fichiers actuels.
+4. Téléverse les fichiers de ce dossier à la racine du dépôt (pas le dossier parent).
+5. Remplace les fichiers portant le même nom après la sauvegarde.
+6. Clique sur **Commit changes**.
+7. Attends la mise à jour de GitHub Pages, puis ouvre :
+   https://si1234dikouattara-source.github.io/reussite-facile/
+
+## Important avant Google AdSense
+Ce ZIP est une base pédagogique enrichie, pas une garantie d'acceptation AdSense. Les leçons doivent être relues, complétées et alignées avec les programmes officiels ivoiriens. Ajoute des contenus originaux et approfondis, une vraie adresse de contact, des informations exactes sur l'éditeur et une politique de confidentialité adaptée aux outils réellement utilisés. Ne publie pas de pages vides ou de contenu copié. L'approbation dépend de l'examen de Google.
+
+## Modifier les cours
+Les cours et quiz sont dans `data.js`. Chaque leçon est organisée ainsi :
+`["Titre", "Explication", "Exemple"]`
+
+Tu peux ajouter des leçons dans la classe et la matière correspondantes en respectant la syntaxe JavaScript.
+
+## Personnalisation obligatoire
+- Dans `contact.html`, remplace l'adresse e-mail d'exemple par une adresse réelle que tu contrôles.
+- Vérifie et complète la politique de confidentialité selon les services et cookies réellement activés.
+- Fais relire les cours par un enseignant avant de les présenter comme conformes au programme officiel.

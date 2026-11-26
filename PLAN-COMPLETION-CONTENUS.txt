@@ -1,0 +1,14 @@
+PLAN DE COMPLETION DES COURS
+
+Cette version contient des leçons de démarrage et des exemples pour les quatre classes.
+Elle ne prétend pas encore couvrir chaque chapitre de chaque matière du programme officiel.
+
+Pour une bibliothèque exhaustive, compléter progressivement :
+- Mathématiques : arithmétique, calcul, géométrie, grandeurs, organisation de données.
+- Français : grammaire, conjugaison, orthographe, vocabulaire, lecture, expression écrite.
+- Anglais : vocabulaire, grammaire, compréhension, expression orale et écrite.
+- Sciences : SVT et physique-chimie selon le programme du niveau.
+- Histoire-Géographie : tous les thèmes et études de cas prévus au programme ivoirien.
+- Éducation civique : institutions, droits, devoirs, citoyenneté et vie collective.
+
+Chaque chapitre doit inclure objectifs, prérequis, leçon détaillée, exemples, exercices gradués et corrigés expliqués.

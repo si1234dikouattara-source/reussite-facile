@@ -1,27 +1,20 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Réussite Facile : cours, exercices corrigés et quiz pour apprendre au primaire, au collège et au lycée en Côte d’Ivoire.">
-<title>Réussite Facile — Apprendre, s'entraîner, progresser</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="top"><a class="brand" href="index.html"><span>RF</span> Réussite Facile</a><button id="menuBtn" aria-label="Ouvrir le menu">☰</button>
-<nav id="nav"><a href="#niveaux">Niveaux</a><a href="#cours">Cours</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a><a href="confidentialite.html">Confidentialité</a></nav></header>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Réussite Facile : cours, leçons, exercices et quiz pour les élèves de 6ème à 3ème en Côte d'Ivoire.">
+<meta name="theme-color" content="#14532d">
+<title>Réussite Facile — Apprendre et réussir</title><link rel="stylesheet" href="style.css">
+</head><body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">RF</span><span>Réussite <b>Facile</b><small>Apprendre • Comprendre • Réussir</small></span></a>
+<nav><a href="#cours">Cours</a><a href="#quiz">Quiz</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a></nav></header>
 <main>
-<section class="hero"><p class="eyebrow">APPRENDRE • S'ENTRAÎNER • PROGRESSER</p><h1>Révise à ton rythme.<br><em>Réussis avec confiance.</em></h1><p>Des explications simples, des exercices pratiques et des quiz gratuits pour apprendre chaque jour.</p><a class="cta" href="#niveaux">Découvrir les matières</a></section>
-<section class="section" id="niveaux"><h2>Choisis ton niveau</h2><div class="cards">
-<article class="card"><h3>Primaire</h3><p>CP1 à CM2</p><a href="#cours" data-level="primaire">Voir les cours</a></article>
-<article class="card"><h3>Collège</h3><p>6e à 3e</p><a href="#cours" data-level="college">Voir les cours</a></article>
-<article class="card"><h3>Lycée</h3><p>2nde à Terminale</p><a href="#cours" data-level="lycee">Voir les cours</a></article>
-</div></section>
-<section class="section" id="cours"><h2>Cours et entraînement</h2><p class="muted">Sélectionne un niveau pour afficher une première leçon. Les contenus seront enrichis progressivement selon les programmes officiels ivoiriens.</p>
-<div class="filters"><label for="level">Niveau</label><select id="level"><option value="primaire">Primaire — CM2</option><option value="college">Collège — 6e</option><option value="lycee">Lycée — 2nde</option></select><label for="subject">Matière</label><select id="subject"><option value="maths">Mathématiques</option><option value="francais">Français</option></select></div>
-<div id="lesson" class="lesson" aria-live="polite"></div>
-</section>
-<section class="section note"><h2>Notre engagement</h2><p>Les leçons proposées ici sont des ressources d'entraînement. Vérifie toujours les notions et progressions avec les documents officiels de ton établissement et de ton enseignant.</p></section>
+<section class="hero"><div><p class="eyebrow">TON ESPACE POUR PROGRESSER</p><h1>Le savoir ouvre<br><em>toutes les portes.</em></h1><p>Des leçons simples, des exemples et des quiz pour avancer de la 6ème à la 3ème.</p><a class="button" href="#cours">Découvrir les cours</a></div><div class="hero-card"><span>🎓</span><strong>4 niveaux</strong><p>De la 6ème à la 3ème</p><hr><strong>Apprends à ton rythme</strong><p>Révise partout, même sur téléphone.</p></div></section>
+<section class="section" id="cours"><div class="section-heading"><div><p class="eyebrow">LES PROGRAMMES</p><h2>Choisis ta classe</h2></div><p>Retrouve les matières et les leçons disponibles.</p></div><div id="class-grid" class="class-grid"></div>
+<div class="toolbar"><input id="search" type="search" placeholder="Rechercher une matière ou une leçon…" aria-label="Rechercher"><select id="subject-filter" aria-label="Filtrer par matière"><option value="">Toutes les matières</option></select></div>
+<div id="lesson-list" class="lesson-list"></div></section>
+<section class="quiz-section" id="quiz"><div class="quiz-intro"><p class="eyebrow">ENTRAÎNE-TOI</p><h2>Un petit quiz pour tester tes connaissances</h2><p>Choisis une réponse et découvre l'explication.</p></div><div class="quiz-box" id="quiz-box"></div></section>
+<section class="section tips"><h2>La méthode pour réussir</h2><div class="tips-grid"><article><b>01</b><h3>Lis la leçon</h3><p>Prends le temps de comprendre les définitions et les exemples.</p></article><article><b>02</b><h3>Refais les exemples</h3><p>Cache la correction et essaie de retrouver les étapes.</p></article><article><b>03</b><h3>Entraîne-toi</h3><p>Utilise les quiz et révise régulièrement tes erreurs.</p></article></div></section>
 </main>
-<footer><p>© <span id="year"></span> Réussite Facile — Apprendre chaque jour.</p><p><a href="a-propos.html">À propos</a> · <a href="contact.html">Contact</a> · <a href="confidentialite.html">Confidentialité</a></p></footer>
-<script src="script.js"></script>
-</body></html>
+<footer><div><a class="brand footer-brand" href="index.html"><span class="brand-mark">RF</span><span>Réussite <b>Facile</b></span></a><p>Un espace d'apprentissage pour progresser chaque jour.</p></div><div class="footer-links"><a href="a-propos.html">À propos</a><a href="confidentialite.html">Confidentialité</a><a href="contact.html">Contact</a></div><small>© <span id="year"></span> Réussite Facile. Tous droits réservés.</small></footer>
+<script src="data.js"></script><script src="script.js"></script></body></html>

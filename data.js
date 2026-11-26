@@ -1,281 +1,424 @@
-/* ============================================================
-   TOUS TES COURS SONT ICI.
-   Pour ajouter un cours : copie un bloc { ... }, colle-le à la
-   suite (avec une virgule), puis change le texte.
-   niveau : "primaire" | "college" | "lycee"
-   ============================================================ */
-const COURS = [
-  /* ---------------------- PRIMAIRE ---------------------- */
-  {
-    id: "ce2-tables-multiplication",
-    niveau: "primaire",
-    classe: "CE2",
-    matiere: "Maths",
-    titre: "Les tables de multiplication (2, 3, 4 et 5)",
-    resume: "Comprendre la multiplication et retenir les premières tables.",
-    lecon: [
-      {
-        titre: "Multiplier, c'est additionner plusieurs fois",
-        html: `<p>Multiplier, c'est additionner plusieurs fois le même nombre.</p>
-               <div class="exemple">3 × 4 = 3 + 3 + 3 + 3 = <strong>12</strong></div>
-               <p>On lit : « 3 multiplié par 4 » ou « 4 fois 3 ».</p>`
-      },
-      {
-        titre: "Des astuces pour aller plus vite",
-        html: `<ul>
-                 <li><strong>Table de 2</strong> : c'est le double. 2 × 6 = 6 + 6 = 12.</li>
-                 <li><strong>Table de 5</strong> : le résultat finit toujours par 0 ou 5.</li>
-                 <li><strong>Table de 4</strong> : c'est le double du double. 4 × 3 = (3 × 2) × 2 = 12.</li>
-                 <li>On peut changer l'ordre : 3 × 4 = 4 × 3.</li>
-               </ul>`
+window.REUSSITE_DATA = {
+  "classes": {
+    "6e": {
+      "label": "6ème",
+      "subjects": {
+        "Mathématiques": [
+          [
+            "Nombres entiers et décimaux",
+            "Lire, écrire, comparer et ranger les nombres entiers et décimaux. Pour comparer deux décimaux, on compare d'abord les parties entières, puis les chiffres après la virgule en complétant si nécessaire avec des zéros.",
+            "Comparer 12,5 et 12,48 : écrire 12,50 puis comparer. Donc 12,50 > 12,48."
+          ],
+          [
+            "Fractions simples",
+            "Une fraction représente une ou plusieurs parts égales d'une unité. Le dénominateur indique le nombre de parts égales et le numérateur le nombre de parts considérées.",
+            "Dans 3/4, l'unité est partagée en 4 parts égales et on en prend 3."
+          ],
+          [
+            "Périmètre et aire",
+            "Le périmètre est la longueur du contour. L'aire mesure la surface. Pour un rectangle : P = 2 × (L + l) et A = L × l.",
+            "Rectangle de 8 cm sur 3 cm : P = 22 cm et A = 24 cm²."
+          ]
+        ],
+        "Français": [
+          [
+            "Les types de phrases",
+            "Une phrase peut être déclarative, interrogative, exclamative ou impérative. Elle commence par une majuscule et se termine par un signe de ponctuation adapté.",
+            "« Où vas-tu ? » est une phrase interrogative."
+          ],
+          [
+            "Le nom et le déterminant",
+            "Le nom désigne une personne, un animal, une chose ou une idée. Le déterminant se place généralement devant le nom et précise son genre et son nombre.",
+            "« Les élèves » : les est un déterminant, élèves est un nom commun."
+          ],
+          [
+            "Le présent de l'indicatif",
+            "Le présent exprime une action actuelle, une habitude ou une vérité générale. Les terminaisons varient selon le groupe du verbe.",
+            "Chanter : je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent."
+          ]
+        ],
+        "Anglais": [
+          [
+            "Greetings and introductions",
+            "Use Hello, Good morning and Good evening to greet people. To introduce yourself, say: My name is… / I am…",
+            "A: Hello! What is your name? B: My name is Awa."
+          ],
+          [
+            "The verb to be",
+            "The verb to be means être. Present forms: I am, you are, he/she/it is, we are, you are, they are.",
+            "She is a pupil. They are friends."
+          ]
+        ],
+        "Sciences": [
+          [
+            "Les êtres vivants",
+            "Un être vivant naît, grandit, se nourrit, se reproduit et meurt. Les plantes et les animaux sont des êtres vivants.",
+            "Une graine peut germer si elle reçoit de l'eau, de l'air et une température favorable."
+          ],
+          [
+            "L'eau dans la nature",
+            "L'eau existe sous trois états : solide, liquide et gazeux. Le cycle de l'eau comprend évaporation, condensation et précipitations.",
+            "La vapeur d'eau se refroidit et forme des gouttelettes dans les nuages."
+          ]
+        ],
+        "Histoire-Géographie": [
+          [
+            "Se repérer dans le temps",
+            "La chronologie classe les événements du plus ancien au plus récent. Une frise chronologique représente le temps avec une échelle.",
+            "Sur une frise, une date placée à gauche est généralement plus ancienne."
+          ],
+          [
+            "Lire une carte",
+            "Une carte représente un espace vu de dessus. Le titre, la légende, l'échelle et l'orientation aident à la lire.",
+            "La légende explique les couleurs et les symboles utilisés."
+          ]
+        ],
+        "Éducation civique": [
+          [
+            "Les règles de vie en société",
+            "Les règles permettent de vivre ensemble dans le respect, la sécurité et la justice. Les droits s'accompagnent de devoirs.",
+            "Respecter les autres et protéger les biens communs sont des comportements citoyens."
+          ]
+        ]
       }
-    ],
-    retenir: [
-      "Multiplier = additionner plusieurs fois le même nombre.",
-      "On peut changer l'ordre : 3 × 4 = 4 × 3.",
-      "Les résultats de la table de 5 finissent par 0 ou 5."
-    ],
-    exercices: [
-      { enonce: "Calcule 4 × 6.", correction: "4 × 6 = 6 + 6 + 6 + 6 = <strong>24</strong>." },
-      { enonce: "Léa a 5 paquets de 3 stylos. Combien de stylos a-t-elle ?", correction: "5 × 3 = <strong>15 stylos</strong>." },
-      { enonce: "Complète : 3 × ___ = 18.", correction: "3 × 6 = 18, donc la réponse est <strong>6</strong>." }
-    ],
-    quiz: [
-      { q: "Combien font 5 × 7 ?", choix: ["30", "35", "40", "45"], bonne: 1, explication: "5 × 7 = 35 (le résultat finit par 5)." },
-      { q: "Combien font 4 × 8 ?", choix: ["28", "32", "36", "24"], bonne: 1, explication: "4 × 8 = double de 8 (16), puis double de 16 : 32." },
-      { q: "Quel nombre est dans la table de 5 ?", choix: ["23", "42", "35", "18"], bonne: 2, explication: "35 finit par 5 : 5 × 7 = 35." },
-      { q: "Combien font 3 × 9 ?", choix: ["27", "24", "21", "30"], bonne: 0, explication: "3 × 9 = 9 + 9 + 9 = 27." }
-    ]
+    },
+    "5e": {
+      "label": "5ème",
+      "subjects": {
+        "Mathématiques": [
+          [
+            "Nombres relatifs",
+            "Les nombres relatifs sont positifs, négatifs ou nuls. Sur une droite graduée, les nombres augmentent de gauche à droite.",
+            "−3 < −1 < 0 < 2."
+          ],
+          [
+            "Opérations sur les fractions",
+            "Pour additionner des fractions de même dénominateur, on additionne les numérateurs et on conserve le dénominateur.",
+            "2/7 + 3/7 = 5/7."
+          ],
+          [
+            "Angles et triangles",
+            "La somme des angles d'un triangle est égale à 180°. Un triangle isocèle possède deux côtés de même longueur.",
+            "Si deux angles mesurent 50° et 60°, le troisième mesure 70°."
+          ]
+        ],
+        "Français": [
+          [
+            "Le groupe nominal",
+            "Le groupe nominal est construit autour d'un nom noyau. Il peut comporter un déterminant, un adjectif et un complément du nom.",
+            "« La grande maison de mon oncle » est un groupe nominal."
+          ],
+          [
+            "L'imparfait",
+            "L'imparfait sert souvent à décrire ou à exprimer une habitude passée. Radical de nous au présent + terminaisons ais, ais, ait, ions, iez, aient.",
+            "Finir : je finissais, nous finissions."
+          ],
+          [
+            "Le récit",
+            "Un récit comporte généralement une situation initiale, un élément perturbateur, des péripéties et une situation finale.",
+            "Repérer les étapes aide à comprendre l'évolution de l'histoire."
+          ]
+        ],
+        "Anglais": [
+          [
+            "Daily routines",
+            "Use the present simple to talk about habits. Add -s or -es with he, she and it.",
+            "I go to school. She goes to school."
+          ],
+          [
+            "There is / There are",
+            "Use there is for one thing and there are for several things.",
+            "There is a book. There are three books."
+          ]
+        ],
+        "Sciences": [
+          [
+            "La respiration",
+            "La respiration permet aux organismes d'obtenir l'énergie nécessaire à leur fonctionnement. Chez l'être humain, les échanges gazeux se font dans les poumons.",
+            "L'oxygène passe dans le sang au niveau des alvéoles pulmonaires."
+          ],
+          [
+            "Mélanges et solutions",
+            "Un mélange est constitué de plusieurs substances. Il est homogène si l'on ne distingue pas ses constituants à l'œil nu.",
+            "L'eau salée est un mélange homogène après dissolution du sel."
+          ]
+        ],
+        "Histoire-Géographie": [
+          [
+            "Les grandes civilisations",
+            "Les civilisations se développent grâce à l'organisation sociale, aux échanges, aux techniques et à la culture.",
+            "Les fleuves ont favorisé l'agriculture et l'installation de populations."
+          ],
+          [
+            "Le milieu naturel",
+            "Le climat, le relief, les sols et l'eau influencent les activités humaines. Les sociétés aménagent leur environnement.",
+            "Les cultures agricoles dépendent notamment de l'eau et des saisons."
+          ]
+        ],
+        "Éducation civique": [
+          [
+            "Droits et devoirs de l'enfant",
+            "L'enfant a droit à l'éducation, à la protection et à la santé. Il doit aussi respecter les autres et les règles communes.",
+            "Aller à l'école est un droit et participer au travail scolaire est une responsabilité."
+          ]
+        ]
+      }
+    },
+    "4e": {
+      "label": "4ème",
+      "subjects": {
+        "Mathématiques": [
+          [
+            "Calcul littéral",
+            "Le calcul littéral utilise des lettres pour représenter des nombres. On réduit une expression en regroupant les termes semblables.",
+            "3x + 2x − 4 = 5x − 4."
+          ],
+          [
+            "Équations du premier degré",
+            "Résoudre une équation consiste à trouver la valeur de l'inconnue qui rend l'égalité vraie. On effectue la même opération aux deux membres.",
+            "x + 7 = 12 donc x = 5."
+          ],
+          [
+            "Théorème de Pythagore",
+            "Dans un triangle rectangle, le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés.",
+            "Si les côtés de l'angle droit mesurent 3 et 4 cm, l'hypoténuse mesure 5 cm."
+          ]
+        ],
+        "Français": [
+          [
+            "Les propositions",
+            "Une phrase complexe contient plusieurs propositions. Elles peuvent être juxtaposées, coordonnées ou subordonnées.",
+            "« Il pleut, donc je reste » contient deux propositions coordonnées."
+          ],
+          [
+            "Le passé simple",
+            "Le passé simple est un temps du récit écrit. Il exprime souvent des actions brèves et successives.",
+            "Il entra, posa son sac et s'assit."
+          ],
+          [
+            "L'argumentation",
+            "Un texte argumentatif défend une thèse à l'aide d'arguments et d'exemples. Les connecteurs organisent le raisonnement.",
+            "Thèse : lire est utile. Argument : la lecture enrichit le vocabulaire."
+          ]
+        ],
+        "Anglais": [
+          [
+            "Past simple",
+            "Use the past simple for finished actions in the past. Regular verbs often take -ed; irregular verbs have special forms.",
+            "Yesterday, I visited my aunt. She went to school."
+          ],
+          [
+            "Comparatives",
+            "Use -er than or more … than to compare two people or things.",
+            "A train is faster than a bicycle."
+          ]
+        ],
+        "Sciences": [
+          [
+            "La reproduction humaine",
+            "La reproduction humaine est sexuée. La fécondation correspond à la rencontre d'un spermatozoïde et d'un ovule.",
+            "La cellule-œuf se forme après la fécondation et commence à se développer."
+          ],
+          [
+            "Électricité : circuit simple",
+            "Un circuit électrique fermé permet le passage du courant. Un générateur fournit l'énergie électrique.",
+            "Dans un circuit en série, si la lampe est retirée, le circuit est ouvert."
+          ]
+        ],
+        "Histoire-Géographie": [
+          [
+            "Les échanges et les contacts",
+            "Les échanges commerciaux et culturels mettent les sociétés en relation et favorisent la circulation des produits et des idées.",
+            "Les ports et les routes facilitent les échanges entre régions."
+          ],
+          [
+            "Population et développement",
+            "La répartition de la population est inégale. Les emplois, les services, le climat et les transports influencent les installations.",
+            "Les grandes villes attirent souvent les populations par leurs activités."
+          ]
+        ],
+        "Éducation civique": [
+          [
+            "La démocratie",
+            "La démocratie repose sur la participation des citoyens, le pluralisme, les libertés et le respect des lois.",
+            "Le vote permet aux citoyens de choisir leurs représentants."
+          ]
+        ]
+      }
+    },
+    "3e": {
+      "label": "3ème",
+      "subjects": {
+        "Mathématiques": [
+          [
+            "Identités remarquables",
+            "Les identités remarquables facilitent le développement et la factorisation : (a+b)² = a²+2ab+b² ; (a−b)² = a²−2ab+b² ; (a−b)(a+b)=a²−b².",
+            "(x+3)² = x² + 6x + 9."
+          ],
+          [
+            "Fonctions linéaires et affines",
+            "Une fonction linéaire s'écrit f(x)=ax. Une fonction affine s'écrit f(x)=ax+b. Le coefficient a représente la pente.",
+            "Pour f(x)=2x+1, f(3)=7."
+          ],
+          [
+            "Théorème de Thalès",
+            "Dans une configuration de droites parallèles, les longueurs correspondantes sont proportionnelles.",
+            "Si AM/AB = AN/AC, alors on peut calculer une longueur manquante."
+          ],
+          [
+            "Statistiques et probabilités",
+            "La moyenne est la somme des valeurs divisée par leur effectif. Une probabilité est comprise entre 0 et 1.",
+            "Pour 2, 4 et 6, la moyenne est 4."
+          ]
+        ],
+        "Français": [
+          [
+            "La dissertation et le paragraphe argumenté",
+            "Une réponse organisée présente une idée directrice, des arguments expliqués et des exemples précis. Elle se termine par une conclusion.",
+            "Un paragraphe efficace développe une seule idée principale."
+          ],
+          [
+            "Les registres littéraires",
+            "Le registre comique cherche à faire rire ; tragique suscite la crainte et la pitié ; lyrique exprime les sentiments.",
+            "Les procédés d'écriture permettent d'identifier le registre dominant."
+          ],
+          [
+            "La voix passive",
+            "À la voix passive, le sujet subit l'action. La construction utilise être + participe passé.",
+            "« Le professeur corrige la copie » devient « La copie est corrigée par le professeur »."
+          ]
+        ],
+        "Anglais": [
+          [
+            "Present perfect",
+            "Form: have/has + past participle. It connects a past action to the present.",
+            "I have finished my homework."
+          ],
+          [
+            "Expressing opinions",
+            "Use I think, in my opinion, because and however to give and justify an opinion.",
+            "In my opinion, reading is important because it develops knowledge."
+          ]
+        ],
+        "Sciences": [
+          [
+            "Génétique et hérédité",
+            "Les caractères héréditaires sont transmis des parents aux descendants par l'information génétique portée par l'ADN.",
+            "Les chromosomes se trouvent dans le noyau de nombreuses cellules."
+          ],
+          [
+            "Énergie et puissance électrique",
+            "L'énergie électrique consommée peut être calculée par E = P × t lorsque les unités sont cohérentes.",
+            "Un appareil de 100 W utilisé pendant 2 h consomme 200 Wh."
+          ],
+          [
+            "Acides et bases",
+            "Une solution acide a un pH inférieur à 7 ; une solution neutre a un pH égal à 7 ; une solution basique a un pH supérieur à 7 à température usuelle.",
+            "Le papier pH permet d'estimer le caractère acide ou basique."
+          ]
+        ],
+        "Histoire-Géographie": [
+          [
+            "La Côte d'Ivoire : population et économie",
+            "La Côte d'Ivoire possède une économie diversifiée où l'agriculture, l'industrie, les services et les échanges jouent des rôles importants.",
+            "Le cacao, le café, l'anacarde et les activités portuaires comptent parmi les secteurs importants."
+          ],
+          [
+            "Le monde contemporain",
+            "Les relations internationales sont marquées par la coopération, les échanges, les organisations internationales et des défis communs.",
+            "L'ONU est une organisation internationale créée pour favoriser la paix et la coopération."
+          ]
+        ],
+        "Éducation civique": [
+          [
+            "Institutions et citoyenneté en Côte d'Ivoire",
+            "La citoyenneté implique des droits, des devoirs et la participation à la vie collective. Les institutions organisent l'État selon la Constitution et les lois.",
+            "S'informer, respecter la loi et participer à la vie de la communauté sont des attitudes citoyennes."
+          ]
+        ]
+      }
+    }
   },
-  {
-    id: "cm1-present-premier-groupe",
-    niveau: "primaire",
-    classe: "CM1",
-    matiere: "Français",
-    titre: "Le présent des verbes du 1er groupe",
-    resume: "Conjuguer les verbes en -er (chanter, jouer, parler…).",
-    lecon: [
-      {
-        titre: "Les terminaisons",
-        html: `<p>Les verbes du 1er groupe ont un infinitif en <strong>-er</strong> (sauf « aller »). Au présent, on garde le radical et on ajoute :</p>
-               <div class="exemple">
-                 je chant<strong>e</strong><br>tu chant<strong>es</strong><br>il / elle chant<strong>e</strong><br>
-                 nous chant<strong>ons</strong><br>vous chant<strong>ez</strong><br>ils / elles chant<strong>ent</strong>
-               </div>`
-      },
-      {
-        titre: "Attention aux petits changements",
-        html: `<ul>
-                 <li><strong>manger</strong> → nous man<strong>ge</strong>ons (on garde le « e » pour le son [j]).</li>
-                 <li><strong>commencer</strong> → nous commen<strong>ç</strong>ons (on met une cédille).</li>
-               </ul>`
-      }
-    ],
-    retenir: [
-      "Terminaisons : -e, -es, -e, -ons, -ez, -ent.",
-      "Avec « ils / elles », on écrit toujours -ent.",
-      "manger → nous mangeons ; commencer → nous commençons."
-    ],
-    exercices: [
-      { enonce: "Conjugue « jouer » avec « tu ».", correction: "Tu <strong>joues</strong>." },
-      { enonce: "Complète : Les élèves (écouter) la maîtresse.", correction: "Les élèves <strong>écoutent</strong> la maîtresse." },
-      { enonce: "Conjugue « manger » avec « nous ».", correction: "Nous <strong>mangeons</strong> (avec un « e » après le g)." }
-    ],
-    quiz: [
-      { q: "Quelle est la terminaison de « ils » au présent (1er groupe) ?", choix: ["-ons", "-ent", "-ez", "-es"], bonne: 1, explication: "Ils chantent : la terminaison est -ent." },
-      { q: "Vous (parler) → ?", choix: ["parlons", "parlent", "parlez", "parles"], bonne: 2, explication: "Avec « vous », on écrit -ez : vous parlez." },
-      { q: "Nous (commencer) → ?", choix: ["commencons", "commençons", "commencent", "commençont"], bonne: 1, explication: "On met une cédille pour garder le son [s] : commençons." },
-      { q: "Tu (danser) → ?", choix: ["danse", "danses", "dansent", "dansez"], bonne: 1, explication: "Avec « tu », on ajoute un -s : tu danses." }
-    ]
-  },
-
-  /* ---------------------- COLLÈGE ---------------------- */
-  {
-    id: "6e-fractions",
-    niveau: "college",
-    classe: "6e",
-    matiere: "Maths",
-    titre: "Les fractions : bien démarrer",
-    resume: "Lire une fraction, comparer, additionner et prendre une fraction d'une quantité.",
-    lecon: [
-      {
-        titre: "Lire une fraction",
-        html: `<p>Dans la fraction <strong>3/4</strong> :</p>
-               <ul>
-                 <li><strong>4</strong> (en bas) est le <em>dénominateur</em> : en combien de parts égales on partage.</li>
-                 <li><strong>3</strong> (en haut) est le <em>numérateur</em> : combien de parts on prend.</li>
-               </ul>`
-      },
-      {
-        titre: "Comparer et additionner (même dénominateur)",
-        html: `<p>Quand le dénominateur est le même, on compare les numérateurs, et on additionne les numérateurs.</p>
-               <div class="exemple">5/8 &gt; 3/8 &nbsp;&nbsp;et&nbsp;&nbsp; 2/7 + 3/7 = 5/7</div>`
-      },
-      {
-        titre: "Prendre une fraction d'une quantité",
-        html: `<p>Pour prendre 3/4 de 20 : on divise par 4, puis on multiplie par 3.</p>
-               <div class="exemple">20 ÷ 4 = 5 &nbsp;puis&nbsp; 5 × 3 = <strong>15</strong></div>`
-      }
-    ],
-    retenir: [
-      "Dénominateur = nombre de parts égales ; numérateur = parts prises.",
-      "Même dénominateur : on additionne les numérateurs, le dénominateur ne change pas.",
-      "Fraction d'une quantité : diviser par le dénominateur, multiplier par le numérateur."
-    ],
-    exercices: [
-      { enonce: "Calcule 2/9 + 4/9 et simplifie.", correction: "2/9 + 4/9 = 6/9. On divise en haut et en bas par 3 : <strong>2/3</strong>." },
-      { enonce: "Calcule 3/5 de 40.", correction: "40 ÷ 5 = 8, puis 8 × 3 = <strong>24</strong>." },
-      { enonce: "Compare 5/8 et 3/8.", correction: "Même dénominateur, 5 &gt; 3 donc <strong>5/8 &gt; 3/8</strong>." }
-    ],
-    quiz: [
-      { q: "Quel est le dénominateur de 5/12 ?", choix: ["5", "12", "17", "7"], bonne: 1, explication: "Le dénominateur est le nombre du bas : 12." },
-      { q: "Combien font 1/5 + 2/5 ?", choix: ["3/10", "3/5", "2/5", "1/5"], bonne: 1, explication: "On additionne les numérateurs : 1 + 2 = 3, sur 5." },
-      { q: "Combien vaut 1/2 de 18 ?", choix: ["8", "9", "10", "36"], bonne: 1, explication: "18 ÷ 2 = 9." },
-      { q: "Quelle fraction est la plus grande ?", choix: ["3/10", "7/10", "1/10", "2/10"], bonne: 1, explication: "Même dénominateur : le plus grand numérateur gagne, donc 7/10." }
-    ]
-  },
-  {
-    id: "3e-pythagore",
-    niveau: "college",
-    classe: "3e",
-    matiere: "Maths",
-    titre: "Le théorème de Pythagore",
-    resume: "Calculer une longueur dans un triangle rectangle, et prouver qu'un triangle est rectangle.",
-    lecon: [
-      {
-        titre: "Le théorème",
-        html: `<p>Dans un triangle rectangle, le carré de l'<strong>hypoténuse</strong> (le côté en face de l'angle droit) est égal à la somme des carrés des deux autres côtés.</p>
-               <div class="exemple">ABC rectangle en A : <strong>BC² = AB² + AC²</strong></div>`
-      },
-      {
-        titre: "Exemple de calcul",
-        html: `<p>ABC est rectangle en A, AB = 3 cm et AC = 4 cm.</p>
-               <div class="exemple">BC² = 3² + 4² = 9 + 16 = 25<br>BC = √25 = <strong>5 cm</strong></div>`
-      },
-      {
-        titre: "La réciproque",
-        html: `<p>Si le carré du plus grand côté est égal à la somme des carrés des deux autres, alors le triangle est rectangle (l'angle droit est en face du plus grand côté).</p>`
-      }
-    ],
-    retenir: [
-      "L'hypoténuse est le côté opposé à l'angle droit, et le plus long.",
-      "Si ABC est rectangle en A : BC² = AB² + AC².",
-      "Réciproque : on compare le carré du grand côté à la somme des deux autres carrés."
-    ],
-    exercices: [
-      { enonce: "ABC est rectangle en A, AB = 6 et AC = 8. Calcule BC.", correction: "BC² = 6² + 8² = 36 + 64 = 100, donc BC = <strong>10</strong>." },
-      { enonce: "ABC est rectangle en A, BC = 13 et AB = 5. Calcule AC.", correction: "L'hypoténuse est BC : AC² = 13² − 5² = 169 − 25 = 144, donc AC = <strong>12</strong>." },
-      { enonce: "Un triangle a pour côtés 5, 12 et 13. Est-il rectangle ?", correction: "Le plus grand côté est 13 : 13² = 169. Et 5² + 12² = 25 + 144 = 169. Les deux sont égaux, donc d'après la réciproque, <strong>le triangle est rectangle</strong>." }
-    ],
-    quiz: [
-      { q: "L'hypoténuse est…", choix: ["le plus petit côté", "le côté opposé à l'angle droit", "un côté de l'angle droit", "la hauteur"], bonne: 1, explication: "C'est le côté en face de l'angle droit." },
-      { q: "ABC rectangle en A. Quelle égalité est vraie ?", choix: ["AB² = BC² + AC²", "AC² = AB² + BC²", "BC² = AB² + AC²", "BC = AB + AC"], bonne: 2, explication: "BC est l'hypoténuse : BC² = AB² + AC²." },
-      { q: "AB = 9 et AC = 12 (rectangle en A). BC = ?", choix: ["15", "21", "225", "13"], bonne: 0, explication: "81 + 144 = 225, et √225 = 15." }
-    ]
-  },
-
-  /* ---------------------- LYCÉE ---------------------- */
-  {
-    id: "2de-fonctions-affines",
-    niveau: "lycee",
-    classe: "2de",
-    matiere: "Maths",
-    titre: "Les fonctions affines",
-    resume: "Coefficient directeur, sens de variation et équation d'une droite.",
-    lecon: [
-      {
-        titre: "Définition",
-        html: `<p>Une fonction affine s'écrit <strong>f(x) = ax + b</strong>. Sa courbe est une droite.</p>
-               <ul>
-                 <li><strong>a</strong> : coefficient directeur (la « pente »).</li>
-                 <li><strong>b</strong> : ordonnée à l'origine (f(0) = b).</li>
-               </ul>`
-      },
-      {
-        titre: "Sens de variation",
-        html: `<ul>
-                 <li>Si a &gt; 0, f est <strong>croissante</strong>.</li>
-                 <li>Si a &lt; 0, f est <strong>décroissante</strong>.</li>
-                 <li>Si a = 0, f est constante.</li>
-               </ul>`
-      },
-      {
-        titre: "Retrouver a et b",
-        html: `<p>Avec deux points A(x₁ ; y₁) et B(x₂ ; y₂) :</p>
-               <div class="exemple">a = (y₂ − y₁) / (x₂ − x₁), puis on trouve b avec un des deux points.</div>`
-      }
-    ],
-    retenir: [
-      "f(x) = ax + b ; sa courbe est une droite.",
-      "a > 0 : croissante ; a < 0 : décroissante.",
-      "a = (y₂ − y₁) / (x₂ − x₁)."
-    ],
-    exercices: [
-      { enonce: "Soit f(x) = 2x + 3. Calcule f(4).", correction: "f(4) = 2 × 4 + 3 = <strong>11</strong>." },
-      { enonce: "Pour f(x) = 2x + 3, trouve l'antécédent de 7.", correction: "On résout 2x + 3 = 7, donc 2x = 4 et x = <strong>2</strong>." },
-      { enonce: "La droite passe par A(1 ; 3) et B(3 ; 7). Donne f(x).", correction: "a = (7 − 3)/(3 − 1) = 2. Puis 3 = 2 × 1 + b, donc b = 1. <strong>f(x) = 2x + 1</strong>." }
-    ],
-    quiz: [
-      { q: "f(x) = −3x + 1 est…", choix: ["croissante", "décroissante", "constante", "impossible à dire"], bonne: 1, explication: "a = −3 < 0, donc décroissante." },
-      { q: "Si f(x) = 5x − 2, que vaut f(0) ?", choix: ["5", "0", "−2", "2"], bonne: 2, explication: "f(0) = b = −2." },
-      { q: "Quel est le coefficient directeur de y = 4x − 7 ?", choix: ["4", "−7", "7", "−4"], bonne: 0, explication: "Dans ax + b, a = 4." },
-      { q: "Pour quelle valeur de x a-t-on 2x − 6 = 0 ?", choix: ["x = 6", "x = −3", "x = 3", "x = 12"], bonne: 2, explication: "2x = 6, donc x = 3." }
-    ]
-  },
-  {
-    id: "terminale-derivees",
-    niveau: "lycee",
-    classe: "Terminale",
-    matiere: "Maths",
-    titre: "Dérivation : formules et tangente",
-    resume: "Dérivées usuelles, dérivée d'un produit, équation d'une tangente.",
-    lecon: [
-      {
-        titre: "Dérivées usuelles",
-        html: `<ul>
-                 <li>(k)′ = 0 (k constante)</li>
-                 <li>(xⁿ)′ = n·xⁿ⁻¹ (par exemple (x⁵)′ = 5x⁴)</li>
-                 <li>(1/x)′ = −1/x²</li>
-                 <li>(√x)′ = 1/(2√x)</li>
-               </ul>`
-      },
-      {
-        titre: "Règles de calcul",
-        html: `<ul>
-                 <li>(u + v)′ = u′ + v′</li>
-                 <li>(k·u)′ = k·u′</li>
-                 <li><strong>(u·v)′ = u′v + uv′</strong></li>
-               </ul>`
-      },
-      {
-        titre: "Tangente",
-        html: `<p>L'équation de la tangente à la courbe de f au point d'abscisse a est :</p>
-               <div class="exemple">y = f′(a)(x − a) + f(a)</div>
-               <p>Et si f′(x) &gt; 0 sur un intervalle, alors f est croissante sur cet intervalle.</p>`
-      }
-    ],
-    retenir: [
-      "(xⁿ)′ = n·xⁿ⁻¹ ; (1/x)′ = −1/x² ; (√x)′ = 1/(2√x).",
-      "(u·v)′ = u′v + uv′.",
-      "Tangente en a : y = f′(a)(x − a) + f(a).",
-      "f′ > 0 sur un intervalle ⇒ f croissante sur cet intervalle."
-    ],
-    exercices: [
-      { enonce: "Dérive f(x) = x³ − 2x² + 5.", correction: "f′(x) = 3x² − 4x + 0 = <strong>3x² − 4x</strong>." },
-      { enonce: "Dérive f(x) = (2x + 1)(x² − 3) avec la formule du produit.", correction: "u = 2x + 1, u′ = 2 ; v = x² − 3, v′ = 2x.<br>f′(x) = 2(x² − 3) + (2x + 1)(2x) = 2x² − 6 + 4x² + 2x = <strong>6x² + 2x − 6</strong>." },
-      { enonce: "Donne l'équation de la tangente à f(x) = x² au point d'abscisse 3.", correction: "f(3) = 9 et f′(x) = 2x donc f′(3) = 6.<br>y = 6(x − 3) + 9 = <strong>6x − 9</strong>." }
-    ],
-    quiz: [
-      { q: "Quelle est la dérivée de x⁵ ?", choix: ["x⁴", "5x⁴", "5x⁵", "4x⁵"], bonne: 1, explication: "(xⁿ)′ = n·xⁿ⁻¹ donc 5x⁴." },
-      { q: "Quelle est la dérivée de 1/x ?", choix: ["1/x²", "−1/x", "−1/x²", "ln x"], bonne: 2, explication: "(1/x)′ = −1/x²." },
-      { q: "Quelle est la formule de (u·v)′ ?", choix: ["u′·v′", "u′v + uv′", "u′v − uv′", "u·v′"], bonne: 1, explication: "C'est la formule du produit : u′v + uv′." },
-      { q: "Si f′(x) > 0 sur un intervalle, alors f est…", choix: ["décroissante", "constante", "croissante", "nulle"], bonne: 2, explication: "Une dérivée positive signifie que f monte : f est croissante." }
-    ]
-  }
-];
-
-const NIVEAUX = {
-  primaire: "Primaire",
-  college: "Collège",
-  lycee: "Lycée"
+  "quiz": [
+    {
+      "q": "Quel est le résultat de 3/7 + 2/7 ?",
+      "choices": [
+        "5/14",
+        "5/7",
+        "6/7"
+      ],
+      "a": 1,
+      "why": "Même dénominateur : on additionne les numérateurs, 3 + 2 = 5."
+    },
+    {
+      "q": "Quelle phrase est interrogative ?",
+      "choices": [
+        "Je vais à l'école.",
+        "Où habites-tu ?",
+        "Comme il fait beau !"
+      ],
+      "a": 1,
+      "why": "Elle pose une question et se termine par un point d'interrogation."
+    },
+    {
+      "q": "What is the correct form: She ___ happy.",
+      "choices": [
+        "am",
+        "are",
+        "is"
+      ],
+      "a": 2,
+      "why": "Avec she, on utilise is."
+    },
+    {
+      "q": "Dans un triangle, la somme des angles vaut :",
+      "choices": [
+        "90°",
+        "180°",
+        "360°"
+      ],
+      "a": 1,
+      "why": "La somme des trois angles intérieurs d'un triangle est 180°."
+    },
+    {
+      "q": "Un pH inférieur à 7 indique une solution :",
+      "choices": [
+        "Acide",
+        "Neutre",
+        "Basique"
+      ],
+      "a": 0,
+      "why": "À température usuelle, un pH inférieur à 7 est acide."
+    },
+    {
+      "q": "Le passé simple sert surtout à :",
+      "choices": [
+        "Raconter des actions passées",
+        "Exprimer un ordre présent",
+        "Décrire une habitude actuelle"
+      ],
+      "a": 0,
+      "why": "Le passé simple est fréquent dans les récits écrits."
+    },
+    {
+      "q": "Pour un triangle rectangle, le théorème de Pythagore relie :",
+      "choices": [
+        "Les angles",
+        "Les côtés",
+        "Les médianes"
+      ],
+      "a": 1,
+      "why": "Il relie les carrés des longueurs des trois côtés."
+    },
+    {
+      "q": "Which sentence is in the past simple?",
+      "choices": [
+        "I go every day.",
+        "I am going now.",
+        "I visited my friend yesterday."
+      ],
+      "a": 2,
+      "why": "Visited est le prétérit du verbe visit."
+    }
+  ]
 };
